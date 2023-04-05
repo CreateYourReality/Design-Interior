@@ -8,12 +8,16 @@
     src: url(./font/WorkSans-Regular.ttf);
 }
 
+:root{
+    --white:#fff;
+    --black:#000;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
 }
-
 
 html{
     font-size: 62.5%;
@@ -28,31 +32,31 @@ img{
 a{
     font-family: "WorkSans";
     font-size: clamp(1.5rem,1.8vw,2.6rem);
-    color:white;
+    color:var(--white);
     text-decoration: none;
 }
 
 p{
     font-family: "WorkSans";
     font-size: clamp(1.5rem,1.8vw,2.6rem);
-    color:white;
+    color:var(--white);
     margin:30px 0;
 }
 
 h1{
     font-size: clamp(6rem,5vw,8rem);
-    color:black;
+    color:var(--black);
 }
 
 h2{
     font-size: clamp(1.3rem,1.8vw,1.8rem);
     margin-top: 10px;
-    color:black;
+    color:var(--black);
 }
 
 h3{
     font-size: clamp(3rem,3.8vw,5rem);
-    color:white;
+    color:var(--white);
 }
 
 form{
@@ -73,25 +77,23 @@ input[type="submit"]{
 }
 
 label{
-    color:white;
+    color:var(--white);
     margin:20px 0 0 0;
     font-size: 1.5rem;
 }
 
 .story-section h3{
     text-align: center;
-
 }
 
 .feature-section h3, .feature-section p{
-    color:black;
+    color:var(--black);
 }
 
 /* HEADER */
 
 .fake-header{
     height: 100vh;
-    width: 100%;
     display: flex;
 }
 
@@ -101,7 +103,6 @@ label{
     align-items: center; 
     width: 40vw;
     height: 100vh;
-
 }
 
 .left-header div{
@@ -109,16 +110,17 @@ label{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     width:40rem;
     height: 40rem;
-    border:1px solid black;
-    margin:10px;
+    border:1px solid var(--black);
+    margin: 10px;
 }
 
 .right-header{
     width: 60vw;
     height: 100vh;
-     background-image: url("./img/design-interior-1.jpg");
+    background-image: url("./img/design-interior-1.jpg");
     background-repeat: no-repeat;
     background-size: cover; 
 }
@@ -180,6 +182,7 @@ nav div a{
     padding:50px;
 }
 
+
 .feature-section img{
     height: 240px;
     width: 400px;
@@ -193,27 +196,32 @@ nav div a{
     flex-direction: column;
 }
 
-.feature-section div:nth-child(1) p{
+.feature-p{
     width: 40vw;
     text-align: left;
 }
 
-.feature-section div:nth-child(2){
+.feature-div > div p{
+    font-size: 1.5rem;
+    color:grey;
+    margin-top: 0;
+}
+
+.feature-div{
     min-height: 33.3vh;
-    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    text-align: center;
 }
 
-.feature-section div:nth-child(2) img{
-    margin:5px;
+.feature-div img{
+    margin: 15px;
 }
 
-.feature-section div:nth-child(3){
+.feature-div:nth-child(3){
     min-height: 33.3vh;
-    width: 90%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -256,19 +264,6 @@ footer div a{
     margin:10px;
 }
 
-/* footer p{
-    font-size: 2.2rem;
-} */
-
-/* footer div{
-    font-size: 2.2rem;
-    display:flex;
-    justify-content: space-around;
-} */
-
-
-
-
 
 
 /* MEDIA QUERY 600px */
@@ -305,11 +300,8 @@ footer div a{
         width: 100%;
     }
 
-    .feature-section div:nth-child(1){
-        justify-content: center;
-    }
 
-    .feature-section div:nth-child(1) p{
+    .feature-p{
         width: 100%;
     }
 
